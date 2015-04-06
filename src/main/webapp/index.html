@@ -1,0 +1,62 @@
+<!--
+  Copyright (c) 2015 Google Inc.
+  Licensed under the Apache License, Version 2.0 (the "License"); you may not
+  use this file except in compliance with the License. You may obtain a copy of
+  the License at
+  http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+  License for the specific language governing permissions and limitations under
+  the License.
+-->
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+
+        <title>Nearby train station Locations With GeoFire 2.0</title>
+
+        <!-- STYLESHEETS -->
+        <link href="css/animate.min.css" rel="stylesheet">
+        <link href="css/site.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- MAP -->
+        <div id="map-canvas"></div>
+
+
+        <div id="userlegend" style="font-size: x-large; background: white; padding: 10px;">
+            <!--No logged-in User!-->
+        </div>
+
+
+        <!-- JAVASCRIPT -->
+  
+        <!-- Google Maps -->
+        <!-- // TODO: update key -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6U2ExB8yLDc7RiGPYK3C3yIzDPpyFJE0&sensor=false"></script>
+
+        <!-- Firebase -->
+        <script src="https://cdn.firebase.com/js/client/2.2.3/firebase.js"></script>
+
+        <!-- RSVP -->
+        <script src="js/vendor/rsvp.min.js"></script>
+
+        <!-- GeoFire -->
+        <script src="js/vendor/geofire.min.js"></script>
+
+        <!-- Lo-Dash -->
+        <script src="js/vendor/lodash.min.js"></script>
+
+        <!-- Custom JavaScript -->
+        <script src="js/trainEgress.js"></script>
+        <script src="js/maps.js"></script>
+
+        <script type="text/javascript">
+            google.maps.event.addDomListener(window, "load", initializeMap);
+        </script>
+
+    </body>
+</html>

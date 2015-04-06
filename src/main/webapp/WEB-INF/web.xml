@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <servlet>
+        <servlet-name>addStationServlet</servlet-name>
+        <servlet-class>org.alexismp.egress.AddStationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addStationServlet</servlet-name>
+        <url-pattern>/addStationServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EgressLoggerServlet</servlet-name>
+        <servlet-class>org.alexismp.egress.EgressLoggerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ResetStationServlet</servlet-name>
+        <servlet-class>org.alexismp.egress.ResetStationServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ResetAllServlet</servlet-name>
+        <servlet-class>org.alexismp.egress.ResetAllServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EgressLoggerServlet</servlet-name>
+        <url-pattern>/log</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ResetStationServlet</servlet-name>
+        <url-pattern>/admin/reset-station</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ResetAllServlet</servlet-name>
+        <url-pattern>/admin/ResetAllServlet</url-pattern>
+    </servlet-mapping>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>admin</web-resource-name>
+            <url-pattern>/admin/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+</web-app>
