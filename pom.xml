@@ -128,7 +128,6 @@
                 <!--<version>2.0.9.74.v20150814</version>-->
                 <configuration>
                     <!--<gcloud_directory>/path/to/google-cloud-sdk/</gcloud_directory>-->
-                    <gcloud_directory>/usr/local/google/home/alexismp/google-cloud-sdk/</gcloud_directory>
                 </configuration>            
             </plugin>
         </plugins>
