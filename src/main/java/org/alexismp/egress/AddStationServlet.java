@@ -28,10 +28,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.concurrent.CountDownLatch;
+import javax.servlet.annotation.WebServlet;
 
 /**
  * @author alexismp
  */
+@WebServlet(name="addStationServlet", urlPatterns = {"/log"})
 public class AddStationServlet extends HttpServlet {
 
     GeoFire geofire;
@@ -41,8 +43,10 @@ public class AddStationServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         super.init();
+        
+        // TODO: fix all Firebase API calls with real-time DB (or Firestore)
         firebase = new Firebase("https://shining-inferno-9452.firebaseio.com");
-        geofire = new GeoFire(firebase.child("_geofire"));
+//        geofire = new GeoFire(firebase.child("_geofire"));
         login();
         emptyOwner.put("owner", "");
     }
@@ -91,9 +95,9 @@ public class AddStationServlet extends HttpServlet {
             Map<String, Object> stationMap = lineToStationMap(line);
             firebase.child("stations").child(key).setValue(stationMap);
 
-            System.out.println("Updating station [" + key + "] location to geofire ... ");
-            GeoLocation location = new GeoLocation((Float) stationMap.get("latitude"), (Float) stationMap.get("longitude"));
-            geofire.setLocation(key, location);
+//            System.out.println("Updating station [" + key + "] location to geofire ... ");
+//            GeoLocation location = new GeoLocation((Float) stationMap.get("latitude"), (Float) stationMap.get("longitude"));
+//            geofire.setLocation(key, location);
             i++;
         }
     }

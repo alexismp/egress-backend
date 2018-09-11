@@ -18,6 +18,7 @@ import com.google.appengine.api.taskqueue.TaskOptions;
 import java.io.IOException;
 import java.util.Enumeration;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,6 +27,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author alexismp
  */
+@WebServlet(name="EgressLoggerServlet", urlPatterns = {"/EgressLoggerServlet"})
 public class EgressLoggerServlet extends HttpServlet {
 
     /**

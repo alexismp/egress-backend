@@ -25,6 +25,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -33,6 +34,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author alexismp
  */
+@WebServlet(name="ResetStationServlet", urlPatterns = {"/admin/reset-station"})
 public class ResetStationServlet extends HttpServlet {
 
     /**

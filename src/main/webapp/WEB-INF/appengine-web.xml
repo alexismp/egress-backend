@@ -3,8 +3,8 @@
     <application>egress-stations</application>
     <version>${appengine.app.version}</version>
     <threadsafe>true</threadsafe>
-    <!--managed VM is required for Firebase-->
-    <vm>true</vm>
+    <runtime>java8</runtime>
+    <!--
     <precompilation-enabled>false</precompilation-enabled>
 
     <system-properties>
